@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Calvin Chun Wai Tai | Portfolio',
+  description = 'Minimal personal portfolio website',
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=switzer@400&f[]=khand@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b-4 border-black">
+      <nav
+        class="mx-auto max-w-6xl px-6 md:px-10 py-4 flex flex-wrap items-center justify-between gap-4"
+      >
+        <a href="/" class="font-heading text-xl tracking-tight hover:text-violent-red"> C.C.W.T </a>
+
+        <ul
+          class="flex flex-wrap items-center gap-4 md:gap-8 text-sm md:text-base uppercase font-heading"
+        >
+          <li>
+            <a href="/" class:list={['hover:text-violent-red', currentPath === '/' && 'text-violent-red']}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="/projects"
+              class:list={['hover:text-violent-red', currentPath === '/projects' && 'text-violent-red']}
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="/contact"
+              class:list={['hover:text-violent-red', currentPath === '/contact' && 'text-violent-red']}
+            >
+              Contact
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/[your-linkedin-handle]"
+              target="_blank"
+              rel="noreferrer"
+              class="hover:text-violent-red"
+            >
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="border-t-4 border-black mt-24">
+      <div
+        class="mx-auto max-w-6xl px-6 md:px-10 py-8 text-sm flex flex-col md:flex-row gap-3 md:gap-0 md:items-center md:justify-between"
+      >
+        <p>&copy; {new Date().getFullYear()} Calvin Chun Wai Tai</p>
+        <p class="text-black/60">Built with Astro + Tailwind • Cloudflare Pages</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+---
+import Layout from '../components/Layout.astro';
+---
+
+<Layout title="Calvin Chun Wai Tai | Contact" description="Contact and LinkedIn">
+  <section class="mx-auto max-w-4xl px-6 md:px-10 py-20 md:py-28">
+    <h1 class="text-5xl sm:text-6xl md:text-7xl leading-none">Contact</h1>
+    <p class="mt-6 text-lg text-black/80 max-w-2xl">
+      [Insert Contact Intro Here] Available for opportunities, collaborations, and conversations.
+    </p>
+
+    <div class="mt-12 space-y-4 text-xl md:text-2xl">
+      <p>
+        <a
+          href="mailto:your.email@example.com"
+          class="underline decoration-4 decoration-violent-red hover:text-violent-red"
+        >
+          your.email@example.com
+        </a>
+      </p>
+      <p>
+        <a
+          href="https://www.linkedin.com/in/[your-linkedin-handle]"
+          target="_blank"
+          rel="noreferrer"
+          class="underline decoration-4 decoration-transparent hover:decoration-violent-red hover:text-violent-red"
+        >
+          LinkedIn Profile
+        </a>
+      </p>
+    </div>
+
+    <form class="mt-14 border-4 border-black p-6 md:p-8 space-y-5" action="#" method="post">
+      <div>
+        <label for="name" class="block font-heading text-lg mb-2">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="[Your Name]"
+          class="w-full border-2 border-black px-4 py-3 focus:outline-none focus:border-violent-red"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block font-heading text-lg mb-2">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="[your@email.com]"
+          class="w-full border-2 border-black px-4 py-3 focus:outline-none focus:border-violent-red"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="block font-heading text-lg mb-2">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="[Insert message here]"
+          class="w-full border-2 border-black px-4 py-3 focus:outline-none focus:border-violent-red"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="inline-flex items-center border-4 border-violent-red px-7 py-3 font-heading text-lg hover:bg-violent-red hover:text-white"
+      >
+        Send Message
+      </button>
+    </form>
+  </section>
+</Layout>
