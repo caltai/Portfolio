@@ -1,0 +1,2 @@
+# Optional: list paths (one per line) to exclude from Cloudflare Workers Assets uploads.
+# Leave empty for a static Astro site on Pages when using the default asset pipeline.
