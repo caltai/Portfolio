@@ -4,42 +4,15 @@ import Layout from '../components/Layout.astro';
 
 <Layout title="Calvin Chun Wai Tai | Home" description="Career snapshot and portfolio intro">
   <section class="mx-auto max-w-6xl px-6 md:px-10 pt-20 md:pt-28 pb-16 md:pb-24">
-    <p class="font-heading text-sm md:text-base tracking-widest mb-6">Personal Portfolio</p>
+    <div class="flex flex-col md:flex-row gap-10 lg:gap-16 items-start">
+      <div class="flex-1">
+        <p class="font-heading text-sm md:text-base tracking-widest mb-6">Personal Portfolio</p>
 
-    <h1 class="text-5xl sm:text-6xl md:text-8xl leading-[0.95]">Chun Wai Tai (Calvin)</h1>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95]">Chun Wai Tai (Calvin)</h1>
 
-    <div class="mt-5 h-2 w-28 md:w-40 bg-violent-red" aria-hidden="true"></div>
+        <div class="mt-5 h-2 w-28 md:w-40 bg-violent-red" aria-hidden="true"></div>
 
-    <p class="mt-10 max-w-2xl text-lg md:text-xl leading-relaxed text-black/80">
-      Sophisticated global marketing and communications leader with 15+ years of experience driving
-      brand growth, digital transformation, and fundraising across financial institutions and non-profit
-      organizations. Proven in leading teams, managing partners, and navigating complex stakeholder
-      environments. Efficient, credible communicator with the judgment to make balanced, long-term
-      strategic decisions. I am currently learning to use AI tools to enhance my skills.
-    </p>
-
-    <div class="mt-12 flex flex-col sm:flex-row gap-4">
-      <a
-        href="/projects"
-        class="inline-flex items-center justify-center border-4 border-black px-7 py-3 font-heading text-lg hover:bg-black hover:text-white"
-      >
-        View Projects
-      </a>
-      <a
-        href="/contact"
-        class="inline-flex items-center justify-center border-4 border-violent-red px-7 py-3 font-heading text-lg hover:bg-violent-red hover:text-white"
-      >
-        Get In Touch
-      </a>
-    </div>
-  </section>
-
-  <section class="mx-auto max-w-6xl border-t-4 border-black">
-    <div class="py-16 md:py-24">
-      <h2 class="px-6 md:px-10 text-3xl md:text-5xl mb-8 md:mb-10">About Me / Career Snapshot</h2>
-
-      <div class="flex flex-col md:flex-row md:items-start md:gap-10 lg:gap-14">
-        <p class="px-6 md:px-10 md:flex-1 text-base md:text-lg leading-relaxed text-black/80">
+        <p class="mt-10 text-lg md:text-xl leading-relaxed text-black/80">
           Sophisticated global marketing and communications leader with 15+ years of experience driving
           brand growth, digital transformation, and fundraising across financial institutions and non-profit
           organizations. Proven in leading teams, managing partners, and navigating complex stakeholder
@@ -47,17 +20,32 @@ import Layout from '../components/Layout.astro';
           strategic decisions. I am currently learning to use AI tools to enhance my skills.
         </p>
 
-        <figure class="px-6 md:px-0 shrink-0">
-          <img
-            src="/images/calvin.jpg"
-            alt="Portrait of Calvin Chun Wai Tai"
-            width="600"
-            height="450"
-            class="w-full max-w-xs md:w-600 lg:w-450 aspect-[4/3] object-cover"
-            loading="lazy"
-          />
-        </figure>
+        <div class="mt-12 flex flex-col sm:flex-row gap-4">
+          <a
+            href="/projects"
+            class="inline-flex items-center justify-center border-4 border-black px-7 py-3 font-heading text-lg hover:bg-black hover:text-white"
+          >
+            View Projects
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center border-4 border-violent-red px-7 py-3 font-heading text-lg hover:bg-violent-red hover:text-white"
+          >
+            Get In Touch
+          </a>
+        </div>
       </div>
+
+      <figure class="shrink-0 w-full max-w-xs md:max-w-md lg:w-[450px] mt-10 md:mt-0">
+        <img
+          src="/images/calvin.jpg"
+          alt="Portrait of Calvin Chun Wai Tai"
+          width="600"
+          height="450"
+          class="w-full aspect-[4/3] object-cover border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          loading="lazy"
+        />
+      </figure>
     </div>
   </section>
 </Layout>
