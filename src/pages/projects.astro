@@ -3,28 +3,44 @@ import Layout from '../components/Layout.astro';
 
 const projects = [
   {
-    title: '[Insert Project Name 01]',
-    category: '[Brand & Communications]',
-    summary: '[Insert Brand & Communications Project Details]',
-    href: '#',
+    id: 'project-01',
+    title: 'OCBC',
+    category: '[Branding and Digital Execution]',
+    summary: 'Vice President, Brand & Communications',
+    details:
+      'Serving as Vice President of Brand & Communications, I drove comprehensive brand modernization and digital strategy for a major multinational financial institution. A defining achievement was directing the digital execution of the highly complex 2023 Name Change campaign, orchestrating a flawless rollout across all online and point-of-sale channels in tight coordination with the Singapore headquarters. Beyond large-scale transformations, I architected integrated, omnichannel campaigns bridging Western and Asian digital ecosystems—including Facebook, YouTube, WeChat, and Xiaohongshu—and successfully launched the bank’s corporate Instagram with innovative visual content to capture new demographics. Crucially, I balanced this creative digital growth with a rigorous risk-mitigation framework, establishing proactive crisis management strategies and sentiment monitoring to consistently safeguard the corporate brand.',
+    image: '/images/projects/project-01.jpg',
+    imageAlt: '[Insert Project 01 image description]',
   },
   {
-    title: '[Insert Project Name 02]',
-    category: '[Digital Experience]',
-    summary: '[Insert Product / UX Case Study Details]',
-    href: '#',
+    id: 'project-02',
+    title: 'Hong Kong Committee for UNICEF',
+    category: '[Omnichannel Growth]',
+    summary: 'Senior Manager, Digital Fundraising',
+    details:
+      "As Senior Manager of Digital Fundraising for the Hong Kong Committee for UNICEF , I spearheaded data-driven digital transformation initiatives that aligned with global organizational targets and directly accelerated revenue. By overhauling web and mobile platforms through rigorous UX analysis and conversion rate optimization (CRO), I engineered seamless donor experiences that secured strong retention rates. Steering comprehensive omnichannel campaigns—integrating SEM, social media, and targeted fintech partnerships like Tencent's WeChat —I leveraged robust performance analytics to continuously optimize acquisition pipelines. This highly quantitative approach successfully generated 100% growth in digital fundraising, demonstrating my ability to translate complex international stakeholder requirements into high-converting, measurable execution.",
+    image: '/images/projects/project-02.jpg',
+    imageAlt: '[Insert Project 02 image description]',
   },
   {
-    title: '[Insert Project Name 03]',
-    category: '[Campaign Strategy]',
-    summary: '[Insert Cross-Channel Campaign Details]',
-    href: '#',
+    id: 'project-03',
+    title: 'tiny box Innovatives (own agency)',
+    category: '[Entrepreneurial Leadership]',
+    summary: 'Founder/Director',
+    details:
+      "As the Founder and Director of tiny box Innovatives—an independent startup creative agency—I built a profitable business from the ground up, leading an eight-person team to deliver integrated digital solutions. Bridging entrepreneurial agility with corporate rigor, my agency successfully managed and executed high-visibility projects for top-tier financial institutions and global corporations, including DBS Bank, Tencent, and UnionPay. From directing viral commercial video productions to leading complex web and mobile application developments—such as a national charity cross-platform campaign with the Li Ka Shing Foundation—I demonstrated a proven ability to drive end-to-end creative strategy, manage P&L, and deliver measurable market impact at the highest level.",
+    image: '/images/projects/project-03.jpg',
+    imageAlt: '[Insert Project 03 image description]',
   },
   {
-    title: '[Insert Project Name 04]',
-    category: '[Content Systems]',
-    summary: '[Insert Content Architecture Details]',
-    href: '#',
+    id: 'project-04',
+    title: 'MoneyGram International Ltd.',
+    category: '[Cultural Agility]',
+    summary: 'Marketing Officer – Asia Pacific & Indian Sub-continent',
+    details:
+      "Operating out of the regional hub, I oversaw marketing operations for the entire Asia Pacific & Indian Sub-continent market , acting as the central nexus for stakeholders across 34 distinct countries. Because each market presented unique budgets, diverse diaspora audiences, and varying levels of brand awareness, the role demanded extreme agility and complex problem-solving. By collaborating directly with local teams on the ground, I developed deep localization expertise and the robust communication skills required to thrive in fast-paced, multicultural environments—ensuring consistent brand growth while flawlessly navigating cultural nuances.",
+    image: '/images/projects/project-04.jpg',
+    imageAlt: '[Insert Project 04 image description]',
   },
 ];
 ---
@@ -37,18 +53,45 @@ const projects = [
         [Insert Projects Intro Here] Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </p>
 
-      <div class="mt-12 grid gap-6 md:grid-cols-2">
+      <div id="projects-grid" class="mt-12 grid gap-6 md:grid-cols-2">
         {
           projects.map((project) => (
-            <article class="group bg-white text-black border-4 border-white hover:border-violent-red transition-colors duration-200">
-              <a href={project.href} class="block p-6 md:p-8">
+            <article
+              class="project-card group relative bg-white text-black border-4 border-white transition-colors duration-200 hover:border-violent-red"
+              data-project-id={project.id}
+            >
+              <button
+                type="button"
+                class="project-close absolute top-4 right-4 z-10 hidden h-10 w-10 items-center justify-center border-4 border-black font-heading text-xl leading-none hover:border-violent-red hover:text-violent-red"
+                aria-label={`Close ${project.title} case study`}
+              >
+                ×
+              </button>
+
+              <div class="p-6 md:p-8">
                 <p class="font-heading text-sm tracking-widest text-black/60">{project.category}</p>
-                <h2 class="mt-3 text-3xl leading-tight">{project.title}</h2>
+                <h2 class="mt-3 text-3xl leading-tight pr-12">{project.title}</h2>
                 <p class="mt-4 text-black/75 leading-relaxed">{project.summary}</p>
-                <span class="mt-8 inline-block font-heading text-base group-hover:text-violent-red">
+
+                <button
+                  type="button"
+                  class="project-open mt-8 inline-block font-heading text-base hover:text-violent-red"
+                >
                   View Case Study →
-                </span>
-              </a>
+                </button>
+
+                <div class="project-expanded hidden border-t-4 border-black mt-8 pt-8">
+                  <p class="text-black/80 leading-relaxed">{project.details}</p>
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt}
+                    width="1200"
+                    height="675"
+                    class="mt-8 w-full aspect-video object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </article>
           ))
         }
@@ -56,3 +99,73 @@ const projects = [
     </div>
   </section>
 </Layout>
+
+<style>
+  .project-card.is-expanded {
+    grid-column: 1 / -1;
+    border-color: #e60000;
+    position: sticky;
+    top: 5.5rem;
+    z-index: 20;
+  }
+
+  .project-card.is-expanded .project-expanded {
+    display: block;
+  }
+
+  .project-card.is-expanded .project-close {
+    display: flex;
+  }
+
+  .project-card.is-expanded .project-open {
+    display: none;
+  }
+</style>
+
+<script>
+  const grid = document.getElementById('projects-grid');
+  if (!grid) throw new Error('Projects grid not found');
+
+  const cards = Array.from(grid.querySelectorAll<HTMLElement>('.project-card'));
+
+  function collapseCard(card: HTMLElement) {
+    card.classList.remove('is-expanded');
+    card.setAttribute('aria-expanded', 'false');
+  }
+
+  function expandCard(card: HTMLElement) {
+    cards.forEach((other) => {
+      if (other !== card) collapseCard(other);
+    });
+
+    card.classList.add('is-expanded');
+    card.setAttribute('aria-expanded', 'true');
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  grid.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    const card = target.closest<HTMLElement>('.project-card');
+    if (!card) return;
+
+    if (target.closest('.project-close')) {
+      collapseCard(card);
+      return;
+    }
+
+    if (target.closest('.project-open')) {
+      if (card.classList.contains('is-expanded')) {
+        collapseCard(card);
+      } else {
+        expandCard(card);
+      }
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+
+    const expanded = grid.querySelector<HTMLElement>('.project-card.is-expanded');
+    if (expanded) collapseCard(expanded);
+  });
+</script>
