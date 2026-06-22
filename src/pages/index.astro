@@ -55,19 +55,86 @@ import Layout from '../components/Layout.astro';
 
   <section class="mx-auto max-w-6xl border-t-4 border-black">
     <div class="py-16 md:py-24 px-6 md:px-10">
-      <h2 class="text-3xl md:text-5xl mb-8 md:mb-10">About Me / Career Snapshot</h2>
+      <h2 class="text-3xl md:text-5xl mb-12 md:mb-16">About Me / Career Snapshot</h2>
 
-      <div class="grid md:grid-cols-2 gap-8 md:gap-16">
-        <p class="text-base md:text-lg leading-relaxed text-black/80">
-          Sophisticated global marketing and communications leader with 15+ years of experience driving
-          brand growth, digital transformation, and fundraising across financial institutions and non-profit
-          organizations. Proven in leading teams, managing partners, and navigating complex stakeholder
-          environments.
-        </p>
-        <p class="text-base md:text-lg leading-relaxed text-black/80">
-          Efficient, credible communicator with the judgment to make balanced, long-term
-          strategic decisions. I am currently learning to use AI tools to enhance my skills and stay at the forefront of modern marketing.
-        </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 lg:gap-x-16 gap-y-16">
+        <!-- Grid Item 1 -->
+        <div class="flex flex-col items-center text-center">
+          <div class="h-16 w-16 rounded-full bg-black text-white flex items-center justify-center border-4 border-black hover:bg-violent-red hover:border-violent-red hover:text-white transition-colors duration-300 mb-6 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499c.195-.49.887-.49 1.082 0l2.001 5.034 5.402.434c.534.043.748.702.35 1.079l-4.043 3.824 1.157 5.25c.114.518-.444.924-.902.656l-4.717-2.75-4.717 2.75c-.458.268-1.016-.138-.902-.656l1.157-5.25L3.684 10.046c-.398-.377-.184-1.036.35-1.079l5.402-.434 2.001-5.034Z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-heading uppercase mb-3 tracking-tight">Brand Strategy</h3>
+          <p class="text-sm md:text-base leading-relaxed text-black/75 max-w-[280px]">
+            Modernizing corporate identities and leading complex name change campaigns for major financial institutions.
+          </p>
+        </div>
+
+        <!-- Grid Item 2 -->
+        <div class="flex flex-col items-center text-center">
+          <div class="h-16 w-16 rounded-full bg-black text-white flex items-center justify-center border-4 border-black hover:bg-violent-red hover:border-violent-red hover:text-white transition-colors duration-300 mb-6 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-heading uppercase mb-3 tracking-tight">Digital Execution</h3>
+          <p class="text-sm md:text-base leading-relaxed text-black/75 max-w-[280px]">
+            Orchestrating high-impact omnichannel web and mobile rollouts across integrated digital ecosystems.
+          </p>
+        </div>
+
+        <!-- Grid Item 3 -->
+        <div class="flex flex-col items-center text-center">
+          <div class="h-16 w-16 rounded-full bg-black text-white flex items-center justify-center border-4 border-black hover:bg-violent-red hover:border-violent-red hover:text-white transition-colors duration-300 mb-6 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-heading uppercase mb-3 tracking-tight">Omnichannel Growth</h3>
+          <p class="text-sm md:text-base leading-relaxed text-black/75 max-w-[280px]">
+            Driving brand acquisition and engagement via data-backed performance marketing campaigns.
+          </p>
+        </div>
+
+        <!-- Grid Item 4 -->
+        <div class="flex flex-col items-center text-center">
+          <div class="h-16 w-16 rounded-full bg-black text-white flex items-center justify-center border-4 border-black hover:bg-violent-red hover:border-violent-red hover:text-white transition-colors duration-300 mb-6 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-heading uppercase mb-3 tracking-tight">Fintech Fundraising</h3>
+          <p class="text-sm md:text-base leading-relaxed text-black/75 max-w-[280px]">
+            Partnering with major payment platforms and optimizing digital donor acquisition funnels to double revenue.
+          </p>
+        </div>
+
+        <!-- Grid Item 5 -->
+        <div class="flex flex-col items-center text-center">
+          <div class="h-16 w-16 rounded-full bg-black text-white flex items-center justify-center border-4 border-black hover:bg-violent-red hover:border-violent-red hover:text-white transition-colors duration-300 mb-6 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.364 17.636l-.707.707m0-11.312l.707.707m11.312 11.312l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-heading uppercase mb-3 tracking-tight">Startup Leadership</h3>
+          <p class="text-sm md:text-base leading-relaxed text-black/75 max-w-[280px]">
+            Founding and scaling profitable creative agencies and managing cross-functional technical teams.
+          </p>
+        </div>
+
+        <!-- Grid Item 6 -->
+        <div class="flex flex-col items-center text-center">
+          <div class="h-16 w-16 rounded-full bg-black text-white flex items-center justify-center border-4 border-black hover:bg-violent-red hover:border-violent-red hover:text-white transition-colors duration-300 mb-6 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-heading uppercase mb-3 tracking-tight">Global Agility</h3>
+          <p class="text-sm md:text-base leading-relaxed text-black/75 max-w-[280px]">
+            Managing cross-border marketing operations and stakeholder environments spanning 34 countries.
+          </p>
+        </div>
       </div>
     </div>
   </section>
