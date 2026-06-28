@@ -9,8 +9,8 @@ const projects = [
     summary: 'Vice President, Brand & Communications',
     details:
       'Serving as Vice President of Brand & Communications, I drove comprehensive brand modernization and digital strategy for a major multinational financial institution. A defining achievement was directing the digital execution of the highly complex 2023 Name Change campaign, orchestrating a flawless rollout across all online and point-of-sale channels in tight coordination with the Singapore headquarters. Beyond large-scale transformations, I architected integrated, omnichannel campaigns bridging Western and Asian digital ecosystems—including Facebook, YouTube, WeChat, and Xiaohongshu—and successfully launched the bank’s corporate Instagram with innovative visual content to capture new demographics. Crucially, I balanced this creative digital growth with a rigorous risk-mitigation framework, establishing proactive crisis management strategies and sentiment monitoring to consistently safeguard the corporate brand.',
-    image: '/images/projects/project-01.jpg',
-    imageAlt: '[Insert Project 01 image description]',
+    images: ['/images/ocbc 01.jpg', '/images/ocbc 02.jpg'],
+    imageAlt: 'OCBC project case study images',
   },
   {
     id: 'project-02',
@@ -82,14 +82,29 @@ const projects = [
 
                 <div class="project-expanded hidden border-t-4 border-black mt-8 pt-8">
                   <p class="text-black/80 leading-relaxed">{project.details}</p>
-                  <img
-                    src={project.image}
-                    alt={project.imageAlt}
-                    width="1200"
-                    height="675"
-                    class="mt-8 w-full aspect-video object-cover"
-                    loading="lazy"
-                  />
+                  {project.images ? (
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {project.images.map((imgSrc, idx) => (
+                        <img
+                          src={imgSrc}
+                          alt={`${project.title} project image ${idx + 1}`}
+                          width="1200"
+                          height="675"
+                          class="w-full aspect-video object-cover border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                          loading="lazy"
+                        />
+                      ))}
+                    </div>
+                  ) : project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.imageAlt}
+                      width="1200"
+                      height="675"
+                      class="mt-8 w-full aspect-video object-cover border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                      loading="lazy"
+                    />
+                  ) : null}
                 </div>
               </div>
             </article>
