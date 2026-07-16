@@ -9,7 +9,7 @@ const siteFromEnv =
 
 // Static output for Cloudflare Pages (build → dist/). No wrangler deploy step needed.
 export default defineConfig({
-  site: siteFromEnv ?? 'https://calvin-portfolio.pages.dev',
+  site: siteFromEnv ?? 'https://calvin-tai.com',
   output: 'static',
   integrations: [tailwind({ applyBaseStyles: true })],
 });
